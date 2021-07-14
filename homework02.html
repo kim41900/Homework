@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap" rel="stylesheet">
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function () {
+            q1();
+        });
+        function q1() {
+            $.ajax({
+                type: "GET",
+                url: "http://spartacodingclub.shop/sparta_api/rate",
+                data: {},
+                success: function (response) {
+                    let name = response.rate
+
+                    console.log(name)
+                    let callrate = `<p>환율 : ${name}</p>`
+                     $('#names-q1').append(callrate)
+                }
+            })
+        }
+    </script>
+
+    <style>
+        * {
+            font-family: 'Nanum Myeongjo', serif;
+        }
+
+        .car {
+            width: 500px;
+            margin: 100px auto auto auto;
+        }
+
+        .img {
+            width: 500px;
+        }
+
+        .price {
+            font-size: 20px;
+
+        }
+
+        .btn {
+            margin: auto;
+            display: block;
+        }
+        .color_rate{
+            color: blue;
+        }
+
+    </style>
+
+    <title>스파르타코딩클럽 | 부트스트랩 연습하기</title>
+</head>
+
+<body>
+<div class="car">
+    <p class="img">
+        <img src="data:image/jpeg;base64,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">
+    </p>
+    <h1>중고차 매매 <span class="price">가격:1400만원</span></h1>
+    <p id="names-q1" class= "color_rate"></p>
+    <p>박스카로서의 장점이 많은 자동차. 드넓은 실내 공간과 독창적인 외모가 매력입니다. 형제차인 올 뉴 모닝보다 10~20% 비싼 값을 달고 있지만 가치는 충분합니다. 경차라고 믿을 수 없을 정도의 광활한
+        실내 하나만으로도 값어치를 하니까요. 다만 연비도 경차라고 볼 수 없을 정도로 나쁩니다. 핸들링은 '극악'이고 가속력도 너무 느려요. 이는 공기저항이 큰 차체 형상과 무거운 무게, 4단 AT 탓이므로
+        여기에 불만이 있다면 CVT와 조합된 1.0 터보(TCI)를 선택하거나 아예 다른 차를 알아보는 편이 나을 겁니다.</p>
+
+
+    <div class="input-group mb-3">
+        <span class="input-group-text">주문자이름</span>
+        <input type="text" class="form-control" placeholder="" aria-label="Username"
+               aria-describedby="basic-addon1">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" for="inputGroupSelect01">수량</span>
+        <select class="form-select" id="inputGroupSelect01">
+            <option selected>--수량을 선택하세요--</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+        </select>
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text">주소</span>
+        <input type="text" class="form-control" placeholder="" aria-label="Username"
+               aria-describedby="basic-addon1">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text">전화번호</span>
+        <input type="text" class="form-control" placeholder="" aria-label="Username"
+               aria-describedby="basic-addon1">
+    </div>
+    <button type="button" class="btn btn-primary">주문하기</button>
+
+
+</div>
+</body>
+
+</html>
